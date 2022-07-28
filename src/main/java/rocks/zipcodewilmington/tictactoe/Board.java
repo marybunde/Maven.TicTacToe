@@ -74,12 +74,21 @@ public class Board {
     }
 
     public Boolean isTie() {
-        //if both X and O
-        return null;
+        //if both X and O lose, then it results in a tie
+        if (!isInFavorOfX() && !isInFavorOfO()){
+            return true;
+        }
+
+        return false;
     }
 
     public String getWinner() {
-        return null;
-    }
+        if (isInFavorOfO()) {
+            return "O";
+        } else if (isInFavorOfX()) {
+            return "X";
+        }
+        return "";
 
+    }
 }
